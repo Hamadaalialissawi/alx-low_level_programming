@@ -7,7 +7,7 @@
   * depending on its numerical value
   * Return: usually (0)
   */
-int main (void)
+int main(void)
 {
 	char a;
 
