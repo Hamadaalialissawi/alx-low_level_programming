@@ -2,11 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 
-/*
- *Main -assign a random number to a variable and print it
+/**
+ * main - Assign a random number to a variable and print it.
  *
- *return: usually (0)
-*/
+ * This is a longer desc.
+ * Return: Usually (0)
+ */
 int main(void)
 {
 	int n;
