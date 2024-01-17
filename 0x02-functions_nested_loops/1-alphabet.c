@@ -16,14 +16,3 @@ void print_alphabet(void)
 	}
 	_putchar('\n');
 }
-
-/**
-  * main - the main function that call print_alphabet
-  *
-  * Return: usually (0)
-  */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
