@@ -5,20 +5,16 @@
   *
   * @dest: the array that we want to copy to
   * @src: points to the array that we want to copy
-  * Return: dest
+  * Return: str
   */
 char *_strcpy(char *dest, char *src)
 {
-	int tml, i;
+	char *str = dest;
 
-	while (src[tml] != '\0')
+	while (*src != '\0')
 	{
-		tml++;
+		*dest++ = *src++;
 	}
-	for (i = 0; i < tml; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[tml] = '\0';
-	return (dest);
+	*dest = '\0';
+	return (str);
 }
