@@ -5,6 +5,7 @@
   *
   * @dest: the array that we want to copy to
   * @src: points to the array that we want to copy
+  * Return: dest
   */
 char *_strcpy(char *dest, char *src)
 {
