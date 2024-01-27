@@ -9,13 +9,17 @@
   */
 char *_strcpy(char *dest, char *src)
 {
-	int tml;
+	int tml, i;
 
 	while (src[tml] != '\0')
 	{
-		dest[tml] = src[tml];
 		tml++;
 	}
-	dest[tml] = '\0';
+	for (i = 0; i < tml; i++)
+	{
+		dest[i] = src[i];
+	}
+	for (; i < tml; i++)
+		dest[i] = '\0';
 	return (dest);
 }
