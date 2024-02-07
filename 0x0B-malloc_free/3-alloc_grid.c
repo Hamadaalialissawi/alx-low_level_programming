@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
   * alloc_grid -  function returns a pointer to a 2
@@ -19,22 +20,25 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	ar = malloc(height * sizeof(int));
+	if (ar == NULL)
+	{
+		free(ar);
+		return (NULL);
+	}
 	for (l = 0; l < height; l++)
 	{
 		ar[l] = malloc(width * sizeof(int));
-	}
-	if (ar == NULL)
-	{
-		return (NULL);
-	}
-	else
-	{
-		for (i = 0; i < height; i++)
+		if (ar[l] == NULL)
 		{
-			for (d = 0; d < width; d++)
-			{
-				ar[i][d] = 0;
-			}
+			free(ar[l]);
+			return (NULL);
+		}
+	}
+	for (i = 0; i < height; i++)
+	{
+		for (d = 0; d < width; d++)
+		{
+			ar[i][d] = 0;
 		}
 	}
 	return (ar);
