@@ -2,51 +2,52 @@
 #include <stdlib.h>
 
 /**
-  * string_nconcat - ...
-  * @s1: ...
-  * @s2: ...
-  * @n: ...
+  * string_nconcat - function concatenates two strings.
   *
-  * Return: ...
+  * @s1: first string
+  * @s2: sucond string
+  * @n: the number of bytes th copy from s1 to s2
+  * Return: str
   */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0, k = 0, l = 0;
 	char *str;
+	unsigned int s1l, s2l, l, i, d;
 
+	s1l = 0, s2l = 0;
 	if (s1 == NULL)
-		s1 = "";
+		s1 = " ";
 	if (s2 == NULL)
-		s2 = "";
-
-	while (s1[i])
-		i++;
-
-	while (s2[k])
-		k++;
-
-	if (n >= k)
-		l = i + k;
-	else
-		l = i + n;
-
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
-		return (NULL);
-
-	k = 0;
-	while (j < l)
+		s2 = " ";
+	while (s1[s1l] != '\0')
 	{
-		if (j <= i)
-			str[j] = s1[j];
-
-		if (j >= i)
-		{
-			str[j] = s2[k];
-			k++;
-		}
-		j++;
+		s1l++;
 	}
-	str[j] = '\0';
+	while (s2[s2l] != '\0')
+	{
+		s2l++;
+	}
+	if (n >= s2l)
+	{
+		l = s1l + s2l - 1;
+	}
+	else
+	{
+		l = s1l + n;
+	}
+	str = malloc(sizeof(int) * l);
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i < s1l; i++)
+	{
+		str[i] = s1[i];
+	}
+	for (d = 0; d < l - s1l; d++)
+	{
+		str[i + d] = s2[d];
+	}
+	str[i + d] = '\0';
 	return (str);
 }
